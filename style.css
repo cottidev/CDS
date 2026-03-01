@@ -136,6 +136,8 @@ nav {
 
 /* ─── HERO ─────────────────────────────────────────────── */
 
+/* ─── PASTE THIS INTO YOUR styles.css, replacing the existing #hero block ─── */
+
 #hero {
   min-height: 100vh;
   display: flex;
@@ -155,42 +157,166 @@ nav {
   overflow: hidden;
 }
 
-/* subtle pattern overlay */
+/* Decorative background glow blobs */
 #hero::before {
   content: "";
   position: absolute;
-  inset: 0;
-  background-image:
-    radial-gradient(
-      circle at 20% 80%,
-      rgba(255, 255, 255, 0.04) 0%,
-      transparent 50%
-    ),
-    radial-gradient(
-      circle at 80% 20%,
-      rgba(76, 185, 68, 0.08) 0%,
-      transparent 50%
-    );
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(
+    circle,
+    rgba(76, 185, 68, 0.15) 0%,
+    transparent 70%
+  );
+  top: -100px;
+  right: -150px;
+  pointer-events: none;
+}
+
+#hero::after {
+  content: "";
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(
+    circle,
+    rgba(36, 123, 160, 0.2) 0%,
+    transparent 70%
+  );
+  bottom: -80px;
+  left: -100px;
   pointer-events: none;
 }
 
 #hero > * {
   position: relative;
+  z-index: 1;
+}
+
+/* Optional eyebrow label above h1 */
+.hero-eyebrow {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--highlight-green);
+  background: rgba(76, 185, 68, 0.12);
+  border: 1px solid rgba(76, 185, 68, 0.3);
+  padding: 6px 16px;
+  border-radius: 100px;
+  margin-bottom: 1.5rem;
 }
 
 #hero h1 {
-  font-size: clamp(2rem, 6vw, 4rem);
-  font-weight: 800;
-  line-height: 1.15;
-  margin-bottom: 1rem;
-  letter-spacing: -0.5px;
+  font-size: clamp(2.6rem, 8vw, 5.5rem);
+  font-weight: 900;
+  line-height: 1.08;
+  letter-spacing: -1.5px;
+  margin-bottom: 1.4rem;
+  /* Makes part of text pop in green — wrap a word in <span> to use */
+}
+
+#hero h1 .accent {
+  color: var(--highlight-green);
+  position: relative;
+}
+
+/* Underline decoration on accent word */
+#hero h1 .accent::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--highlight-green);
+  border-radius: 2px;
+  opacity: 0.6;
 }
 
 #hero p {
-  font-size: clamp(1rem, 2.5vw, 1.4rem);
-  margin-bottom: 2.5rem;
-  opacity: 0.88;
-  max-width: 600px;
+  font-size: clamp(1.05rem, 2.2vw, 1.35rem);
+  line-height: 1.75;
+  opacity: 0.85;
+  max-width: 580px;
+  margin: 0 auto 2.8rem;
+  font-weight: 400;
+}
+
+/* Button row */
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Outlined secondary button for hero if needed */
+.btn-outline {
+  background: transparent;
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.45);
+  padding: 13px 28px;
+}
+
+.btn-outline:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: white;
+  transform: translateY(-3px);
+}
+
+/* Scroll indicator */
+.scroll-hint {
+  position: absolute;
+  bottom: 36px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  opacity: 0.5;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: white;
+  animation: bounce 2s ease-in-out infinite;
+}
+
+.scroll-hint::before {
+  content: "";
+  width: 1.5px;
+  height: 32px;
+  background: white;
+  border-radius: 2px;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(6px);
+  }
+}
+
+/* ─── RESPONSIVE ─────────────────────────────────────── */
+@media (max-width: 768px) {
+  #hero {
+    padding: 100px 6% 70px;
+  }
+
+  #hero h1 {
+    letter-spacing: -0.5px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+    max-width: 320px;
+  }
 }
 
 /* ─── BUTTONS ──────────────────────────────────────────── */
