@@ -1,0 +1,231 @@
+:root {
+  --primary-blue: #0a2463;
+  --secondary-blue: #247ba0;
+  --highlight-green: #4cb944;
+  --bg-light: #f7f9fa;
+  --text-dark: #1a1a1a;
+  --white: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+/* Nav */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 10%;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--primary-blue);
+  text-decoration: none;
+}
+
+.logo:hover {
+  transform: scale(1.08);
+  opacity: 0.8;
+}
+.logo span {
+  color: var(--highlight-green);
+}
+
+.nav-links a {
+  margin-left: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--primary-blue);
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--highlight-green);
+}
+
+/* Hero */
+#hero {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(135deg, var(--primary-blue) 0%, #103783 100%);
+  color: var(--white);
+  position: relative;
+}
+
+#hero h1 {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+#hero p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+/* Buttons */
+.btn {
+  padding: 15px 30px;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  border: none;
+  transition: 0.3s;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.btn-primary {
+  background: var(--highlight-green);
+  color: white;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(76, 185, 68, 0.3);
+}
+
+.btn-whatsapp {
+  background: #25d366;
+  color: white;
+}
+
+.btn-whatsapp:hover {
+  background: #20b858;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+}
+
+/* Sections */
+.section-padding {
+  padding: 80px 10%;
+}
+
+h2 {
+  font-size: 2.2rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: var(--primary-blue);
+}
+
+.about-text {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 1.1rem;
+  color: #444;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+/* Cards */
+.card {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+.card i {
+  font-size: 2.5rem;
+  color: var(--secondary-blue);
+  margin-bottom: 1rem;
+}
+
+/* Team */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.team-member {
+  text-align: center;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+.avatar {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: var(--highlight-green);
+}
+
+/* Join Section */
+#join {
+  background: white;
+}
+
+.contact-container {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.contact-container h3 {
+  font-size: 1.5rem;
+  color: var(--primary-blue);
+  margin-bottom: 15px;
+}
+
+.contact-container p {
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.action-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+/* Animations classes */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: 0.8s ease-out;
+}
+.fade-in.appear {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+footer {
+  background: #051334;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  font-size: 0.8rem;
+}
