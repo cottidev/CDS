@@ -28,3 +28,13 @@ window.addEventListener("scroll", () => {
     nav.style.boxShadow = "0 2px 10px rgba(0,0,0,0.05)";
   }
 });
+
+// Hamburger toggle
+const hamburger = document.querySelector(".hamburger");
+const navLinks = document.querySelector(".nav-links");
+
+hamburger.addEventListener("click", () => {
+  navLinks.classList.toggle("active");
+  // Animate hamburger into X
+  hamburger.classList.toggle("open");
+});
