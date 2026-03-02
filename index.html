@@ -3,88 +3,138 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="club_logo.png" />
     <title>Club des Sciences | Innovation & Futur</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <!-- NAV -->
     <nav>
-      <div class="logo">
-        <a href="#" class="logo">Club des <span>Sciences</span></a>
-      </div>
-
-      <!-- Hamburger -->
+      <a href="#" class="logo">Club des <span>Sciences</span></a>
       <div class="hamburger">
         <span></span>
         <span></span>
         <span></span>
       </div>
-
       <div class="nav-links">
         <a href="#about">À propos</a>
         <a href="#activities">Activités</a>
         <a href="#team">Équipe</a>
-        <a href="#join">Rejoignez-nous</a>
+        <a href="#join" class="nav-cta">Rejoignez-nous</a>
       </div>
     </nav>
 
+    <!-- HERO -->
     <header id="hero">
-      <div class="hero-content fade-in">
-        <h1>Club des Sciences</h1>
-        <p>Explore l'IA, la science et l'environnement</p>
-        <a href="#join" class="btn btn-primary">Rejoindre le club</a>
+      <div class="hero-bg-grid"></div>
+      <div class="hero-orb hero-orb-1"></div>
+      <div class="hero-orb hero-orb-2"></div>
+      <div class="hero-orb hero-orb-3"></div>
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          Nouveau club — Rejoignez l'aventure
+        </div>
+        <h1>Façonnons le <span class="accent">futur</span><br />ensemble</h1>
+        <p>
+          IA, sciences expérimentales et environnement — un espace pour innover,
+          créer et relever les défis de demain.
+        </p>
+        <div class="hero-actions">
+          <a href="#join" class="btn btn-primary">
+            <span>Rejoindre le club</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+          <a href="#activities" class="btn btn-ghost">Découvrir nos pôles</a>
+        </div>
+      </div>
+      <div class="scroll-hint">
+        <div class="scroll-line"></div>
+        <span>Défiler</span>
       </div>
     </header>
 
+    <!-- ABOUT -->
     <section id="about" class="section-padding fade-in">
-      <h2>Notre Mission</h2>
+      <div class="section-label">Notre mission</div>
+      <h2>Un espace pour<br /><em>innover &amp; diriger</em></h2>
       <p class="about-text">
         Le Club des Sciences est un espace dédié à l'innovation et au
         leadership. Nous réunissons des élèves passionnés pour concevoir des
         projets concrets et relever les défis de demain. Le club vient tout
-        juste d'ouvrir ses portes, c'est le moment idéal pour devenir acteur du
-        changement !
+        juste d'ouvrir ses portes — c'est le moment idéal pour devenir acteur du
+        changement&nbsp;!
       </p>
+      <div class="about-stats">
+        <div class="stat">
+          <span class="stat-number">3</span>
+          <span class="stat-label">Pôles actifs</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-number">∞</span>
+          <span class="stat-label">Projets possibles</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-number">2026</span>
+          <span class="stat-label">Année de lancement</span>
+        </div>
+      </div>
     </section>
 
+    <!-- ACTIVITIES -->
     <section id="activities" class="section-padding fade-in">
+      <div class="section-label">Ce qu'on fait</div>
       <h2>Nos Pôles</h2>
       <div class="grid-3">
         <div class="card card-ia">
-          <i class="fa-solid fa-microchip"></i>
+          <div class="card-icon-wrap">
+            <i class="fa-solid fa-microchip"></i>
+          </div>
           <h3>Intelligence Artificielle</h3>
           <p>
             Découverte du machine learning et de la programmation Python pour
             anticiper le futur.
           </p>
+          <div class="card-footer-line"></div>
         </div>
         <div class="card card-science">
-          <i class="fa-solid fa-flask"></i>
+          <div class="card-icon-wrap">
+            <i class="fa-solid fa-flask"></i>
+          </div>
           <h3>Sciences Expérimentales</h3>
           <p>
             Manipulation et conception de prototypes dans un cadre scientifique
             rigoureux.
           </p>
+          <div class="card-footer-line"></div>
         </div>
         <div class="card card-env">
-          <i class="fa-solid fa-leaf"></i>
+          <div class="card-icon-wrap">
+            <i class="fa-solid fa-leaf"></i>
+          </div>
           <h3>Environnement</h3>
           <p>
             Solutions technologiques pour la transition énergétique et le
             développement durable.
           </p>
+          <div class="card-footer-line"></div>
         </div>
       </div>
     </section>
 
+    <!-- TEAM -->
     <section id="team" class="section-padding fade-in">
+      <div class="section-label">Les personnes</div>
       <h2>Bureau Exécutif</h2>
       <div class="team-grid">
         <div class="team-member">
@@ -108,53 +158,56 @@
           <p>Trésorière</p>
         </div>
       </div>
-
-      <!-- Superviseur -->
       <div class="supervisor-block">
-        <div class="team-member supervisor">
-          <div class="avatar"><i class="fa-solid fa-chalkboard-user"></i></div>
+        <div class="supervisor-card">
+          <div class="supervisor-badge">Superviseur</div>
+          <div class="supervisor-avatar">
+            <i class="fa-solid fa-chalkboard-user"></i>
+          </div>
           <h3>Prof. ATTIOUI Mehdi</h3>
-          <p>Superviseur</p>
+          <p>Enseignant superviseur du club</p>
         </div>
       </div>
     </section>
 
+    <!-- JOIN -->
     <section id="join" class="section-padding fade-in">
-      <h2>Rejoignez l'Aventure</h2>
-      <div class="contact-container">
-        <h3>Prêt(e) à innover ?</h3>
-        <p>
-          Le club vient de se lancer ! Inscris-toi dès maintenant via notre
-          formulaire et rejoins la communauté sur WhatsApp pour ne rien rater
-          des premières réunions.
-        </p>
-
-        <div class="action-buttons">
+      <div class="join-inner">
+        <div class="join-text">
+          <div class="section-label light">Nous rejoindre</div>
+          <h2 class="join-title">Prêt(e) à<br />innover&nbsp;?</h2>
+          <p>
+            Le club vient de se lancer ! Inscris-toi dès maintenant et rejoins
+            la communauté sur WhatsApp pour ne rien rater des premières
+            réunions.
+          </p>
+        </div>
+        <div class="join-actions">
           <a
             href="https://forms.gle/PpXfu36e1HXPtUQq9"
             target="_blank"
-            class="btn btn-primary"
+            class="btn btn-primary btn-lg"
           >
-            Remplir le formulaire d'inscription
+            <i class="fa-solid fa-file-pen"></i>
+            <span>Formulaire d'inscription</span>
           </a>
           <a
             href="https://chat.whatsapp.com/GPHaXRF8ujzDybGBqsgXtB?mode=gi_t"
             target="_blank"
-            class="btn btn-whatsapp"
+            class="btn btn-whatsapp btn-lg"
           >
-            <i class="fa-brands fa-whatsapp"></i> Rejoindre le groupe WhatsApp
+            <i class="fa-brands fa-whatsapp"></i>
+            <span>Rejoindre WhatsApp</span>
           </a>
         </div>
       </div>
     </section>
 
+    <!-- FOOTER -->
     <footer>
       <p>
         &copy; 2026 Club des Sciences. Design moderne et professionnel. Made by
-        <a
-          href="https://github.com/cottidev"
-          target="_blank"
-          style="color: aliceblue; text-decoration: none"
+        <a href="https://github.com/cottidev" target="_blank"
           >cottidev (Aymane Berhoua)</a
         >
       </p>
