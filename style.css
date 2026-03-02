@@ -136,8 +136,6 @@ nav {
 
 /* ─── HERO ─────────────────────────────────────────────── */
 
-/* ─── PASTE THIS INTO YOUR styles.css, replacing the existing #hero block ─── */
-
 #hero {
   min-height: 100vh;
   display: flex;
@@ -193,7 +191,6 @@ nav {
   z-index: 1;
 }
 
-/* Optional eyebrow label above h1 */
 .hero-eyebrow {
   display: inline-block;
   font-size: 0.85rem;
@@ -214,7 +211,6 @@ nav {
   line-height: 1.08;
   letter-spacing: -1.5px;
   margin-bottom: 1.4rem;
-  /* Makes part of text pop in green — wrap a word in <span> to use */
 }
 
 #hero h1 .accent {
@@ -222,7 +218,6 @@ nav {
   position: relative;
 }
 
-/* Underline decoration on accent word */
 #hero h1 .accent::after {
   content: "";
   position: absolute;
@@ -244,7 +239,6 @@ nav {
   font-weight: 400;
 }
 
-/* Button row */
 .hero-buttons {
   display: flex;
   gap: 16px;
@@ -252,7 +246,6 @@ nav {
   flex-wrap: wrap;
 }
 
-/* Outlined secondary button for hero if needed */
 .btn-outline {
   background: transparent;
   color: white;
@@ -266,7 +259,6 @@ nav {
   transform: translateY(-3px);
 }
 
-/* Scroll indicator */
 .scroll-hint {
   position: absolute;
   bottom: 36px;
@@ -302,7 +294,6 @@ nav {
   }
 }
 
-/* ─── RESPONSIVE ─────────────────────────────────────── */
 @media (max-width: 768px) {
   #hero {
     padding: 100px 6% 70px;
@@ -459,6 +450,52 @@ h2 {
   display: block;
 }
 
+/* ─── SUPERVISOR ───────────────────────────────────────── */
+
+.supervisor-block {
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+}
+
+.team-member.supervisor {
+  border: 2px solid var(--highlight-green);
+  max-width: 260px;
+  width: 100%;
+  position: relative;
+}
+
+.team-member.supervisor::before {
+  content: "Superviseur";
+  position: absolute;
+  top: -13px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--highlight-green);
+  color: white;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 3px 12px;
+  border-radius: 100px;
+  white-space: nowrap;
+}
+
+.team-member.supervisor .avatar {
+  color: var(--secondary-blue);
+}
+
+.team-member.supervisor h3 {
+  color: var(--primary-blue);
+  font-weight: 800;
+}
+
+.team-member.supervisor p {
+  color: var(--highlight-green);
+  font-weight: 600;
+}
+
 /* ─── JOIN SECTION ─────────────────────────────────────── */
 
 #join {
@@ -512,29 +549,33 @@ h2 {
 footer {
   background: #051334;
   color: rgba(255, 255, 255, 0.7);
-  padding: 24px;
+  padding: 28px 24px;
   text-align: center;
   font-size: 0.82rem;
   letter-spacing: 0.02em;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+footer strong {
+  color: var(--highlight-green);
 }
 
 /* ─── RESPONSIVE ───────────────────────────────────────── */
 
 @media (max-width: 768px) {
-  /* Nav becomes row: logo left, hamburger right */
   nav {
     padding: 16px 5%;
     flex-wrap: nowrap;
     align-items: center;
   }
 
-  /* Show hamburger */
   .hamburger {
     display: flex;
     margin-left: auto;
   }
 
-  /* Nav links: hidden by default, dropdown on mobile */
   .nav-links {
     position: absolute;
     top: 100%;
@@ -553,7 +594,6 @@ footer {
       padding 0.3s ease;
   }
 
-  /* When open */
   .nav-links.active {
     max-height: 400px;
     padding: 12px 0;
