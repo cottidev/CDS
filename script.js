@@ -28,7 +28,7 @@ document
   .forEach((el) => {
     el.addEventListener("mouseenter", () => cursorRing.classList.add("hover"));
     el.addEventListener("mouseleave", () =>
-      cursorRing.classList.remove("hover"),
+      cursorRing.classList.remove("hover"), 
     );
   });
 
