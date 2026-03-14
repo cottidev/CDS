@@ -65,29 +65,30 @@ body {
 
 /* ─── NAV ─────────────────────────────────────────────── */
 nav {
-  background: rgba(255, 255, 255, 0.96);
   position: fixed;
   top: 0;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 7%;
+  padding: 16px 7%;
   z-index: 1000;
-  transition:
-    padding var(--transition),
-    background var(--transition),
-    box-shadow var(--transition);
-}
-
-nav.scrolled {
-  padding: 12px 7%;
-  background: rgba(255, 255, 255, 0.96);
+  background: rgba(255, 255, 255, 0.97);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   box-shadow:
     0 1px 0 rgba(0, 0, 0, 0.08),
     var(--shadow-sm);
+  transition:
+    padding var(--transition),
+    box-shadow var(--transition);
+}
+
+nav.scrolled {
+  padding: 12px 7%;
+  box-shadow:
+    0 1px 0 rgba(0, 0, 0, 0.1),
+    0 4px 16px rgba(0, 0, 0, 0.08);
 }
 
 .logo {
@@ -145,6 +146,16 @@ nav.scrolled {
   background: var(--blue-600) !important;
   transform: translateY(-1px);
   box-shadow: 0 4px 14px rgba(10, 36, 99, 0.25) !important;
+}
+
+.nav-discord {
+  color: #5865f2 !important;
+  font-weight: 600 !important;
+}
+
+.nav-discord:hover {
+  background: rgba(88, 101, 242, 0.08) !important;
+  color: #4752c4 !important;
 }
 
 /* ─── HAMBURGER ───────────────────────────────────────── */
@@ -478,6 +489,17 @@ nav.scrolled {
   background: #20c05a;
   transform: translateY(-3px);
   box-shadow: var(--shadow-whatsapp);
+}
+
+.btn-discord {
+  background: #5865f2;
+  color: white;
+}
+
+.btn-discord:hover {
+  background: #4752c4;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 28px rgba(88, 101, 242, 0.4);
 }
 
 /* ─── SECTIONS ────────────────────────────────────────── */
@@ -900,10 +922,62 @@ footer {
   background: var(--blue-950);
   border-top: 1px solid rgba(255, 255, 255, 0.06);
   color: rgba(255, 255, 255, 0.35);
-  padding: 28px 8%;
+  padding: 32px 8%;
   text-align: center;
   font-size: 0.8rem;
   letter-spacing: 0.03em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+footer a {
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+footer a:hover {
+  color: white;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 12px;
+}
+
+.footer-social-link {
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  transition:
+    transform var(--transition),
+    background var(--transition),
+    color var(--transition) !important;
+  color: rgba(255, 255, 255, 0.5) !important;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-social-link:hover {
+  transform: translateY(-3px) !important;
+}
+
+.footer-social-link.whatsapp:hover {
+  background: #25d366;
+  color: white !important;
+  border-color: #25d366;
+}
+
+.footer-social-link.discord:hover {
+  background: #5865f2;
+  color: white !important;
+  border-color: #5865f2;
 }
 
 /* ─── RESPONSIVE ──────────────────────────────────────── */
