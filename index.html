@@ -16,234 +16,434 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <!-- CUSTOM CURSOR -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+
+    <!-- NOISE OVERLAY -->
+    <div class="noise-overlay"></div>
+
     <!-- NAV -->
-    <nav>
-      <a href="#" class="logo">Club des <span>Sciences</span></a>
-      <div class="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
+    <nav id="navbar">
+      <a href="#" class="logo">
+        <span class="logo-bracket">[</span>CDS<span class="logo-bracket"
+          >]</span
+        >
+      </a>
+      <div class="nav-center">
+        <a href="#about" class="nav-link">À propos</a>
+        <a href="#activities" class="nav-link">Activités</a>
+        <a href="#team" class="nav-link">Équipe</a>
       </div>
-      <div class="nav-links">
-        <a href="#about">À propos</a>
-        <a href="#activities">Activités</a>
-        <a href="#team">Équipe</a>
+      <div class="nav-right">
         <a
           href="https://discord.gg/M7cN2WmqGN"
           target="_blank"
           class="nav-discord"
         >
-          <i class="fa-brands fa-discord"></i> Discord
+          <i class="fa-brands fa-discord"></i>
         </a>
-        <a href="#join" class="nav-cta">Rejoignez-nous</a>
+        <a href="#join" class="nav-cta"
+          >Rejoindre <i class="fa-solid fa-arrow-right"></i
+        ></a>
+      </div>
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="mobile-menu" id="mobileMenu">
+        <a href="#about">À propos</a>
+        <a href="#activities">Activités</a>
+        <a href="#team">Équipe</a>
+        <a href="https://discord.gg/M7cN2WmqGN" target="_blank">Discord</a>
+        <a href="#join" class="mobile-cta">Rejoindre le club</a>
       </div>
     </nav>
 
     <!-- HERO -->
     <header id="hero">
-      <div class="hero-bg-grid"></div>
-      <div class="hero-orb hero-orb-1"></div>
-      <div class="hero-orb hero-orb-2"></div>
-      <div class="hero-orb hero-orb-3"></div>
+      <div class="hero-grid-bg"></div>
+      <canvas id="particleCanvas"></canvas>
+
       <div class="hero-content">
-        <div class="hero-badge">
-          <span class="badge-dot"></span>
-          Nouveau club — Rejoignez l'aventure
+        <div class="hero-badge" data-reveal>
+          <span class="badge-pulse"></span>
+          <span class="badge-text">Nouveau club — Rejoignez l'aventure</span>
         </div>
-        <h1>Façonnons le <span class="accent">futur</span><br />ensemble</h1>
-        <p>
-          IA, sciences expérimentales et environnement — un espace pour innover,
-          créer et relever les défis de demain.
+
+        <h1 class="hero-title" data-reveal>
+          <span class="line-wrap"><span class="line">Façonnons le</span></span>
+          <span class="line-wrap accent-wrap"
+            ><span class="line accent-word">futur</span></span
+          >
+          <span class="line-wrap"><span class="line">ensemble</span></span>
+        </h1>
+
+        <p class="hero-subtitle" data-reveal>
+          IA, sciences expérimentales et environnement —<br />
+          un espace pour innover, créer et relever les défis de demain.
         </p>
-        <div class="hero-actions">
+
+        <div class="hero-actions" data-reveal>
           <a href="#join" class="btn btn-primary">
             <span>Rejoindre le club</span>
-            <i class="fa-solid fa-arrow-right"></i>
+            <span class="btn-icon"
+              ><i class="fa-solid fa-arrow-right"></i
+            ></span>
           </a>
-          <a href="#activities" class="btn btn-ghost">Découvrir nos pôles</a>
+          <a href="#activities" class="btn btn-outline">
+            Découvrir nos pôles
+          </a>
+        </div>
+
+        <div class="hero-counter" data-reveal>
+          <div class="counter-item">
+            <span class="counter-num" data-count="3">0</span>
+            <span class="counter-label">Pôles actifs</span>
+          </div>
+          <div class="counter-sep"></div>
+          <div class="counter-item">
+            <span class="counter-num">∞</span>
+            <span class="counter-label">Projets possibles</span>
+          </div>
+          <div class="counter-sep"></div>
+          <div class="counter-item">
+            <span class="counter-num" data-count="2026">0</span>
+            <span class="counter-label">Année de lancement</span>
+          </div>
         </div>
       </div>
-      <div class="scroll-hint">
-        <div class="scroll-line"></div>
-        <span>Défiler</span>
+
+      <div class="scroll-cue">
+        <div class="scroll-wheel"></div>
       </div>
     </header>
 
     <!-- ABOUT -->
-    <section id="about" class="section-padding fade-in">
-      <div class="section-label">Notre mission</div>
-      <h2>Un espace pour<br /><em>innover &amp; diriger</em></h2>
-      <p class="about-text">
-        Le Club des Sciences est un espace dédié à l'innovation et au
-        leadership. Nous réunissons des élèves passionnés pour concevoir des
-        projets concrets et relever les défis de demain. Le club vient tout
-        juste d'ouvrir ses portes — c'est le moment idéal pour devenir acteur du
-        changement&nbsp;!
-      </p>
-      <div class="about-stats">
-        <div class="stat">
-          <span class="stat-number">3</span>
-          <span class="stat-label">Pôles actifs</span>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat">
-          <span class="stat-number">∞</span>
-          <span class="stat-label">Projets possibles</span>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat">
-          <span class="stat-number">2026</span>
-          <span class="stat-label">Année de lancement</span>
+    <section id="about" class="section reveal-section">
+      <div class="section-inner">
+        <div class="about-layout">
+          <div class="about-left">
+            <div class="tag">Notre mission</div>
+            <h2>Un espace pour<br /><em>innover</em> &amp; <em>diriger</em></h2>
+            <p class="about-text">
+              Le Club des Sciences est un espace dédié à l'innovation et au
+              leadership. Nous réunissons des élèves passionnés pour concevoir
+              des projets concrets et relever les défis de demain.
+            </p>
+            <p class="about-text highlight-text">
+              Le club vient tout juste d'ouvrir ses portes — c'est le moment
+              idéal pour devenir acteur du changement&nbsp;!
+            </p>
+          </div>
+          <div class="about-right">
+            <div class="about-visual">
+              <div class="visual-ring ring-1"></div>
+              <div class="visual-ring ring-2"></div>
+              <div class="visual-ring ring-3"></div>
+              <div class="visual-center">
+                <i class="fa-solid fa-atom"></i>
+              </div>
+              <div class="orbit-dot dot-1">
+                <i class="fa-solid fa-microchip"></i>
+              </div>
+              <div class="orbit-dot dot-2">
+                <i class="fa-solid fa-flask"></i>
+              </div>
+              <div class="orbit-dot dot-3">
+                <i class="fa-solid fa-leaf"></i>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- ACTIVITIES -->
-    <section id="activities" class="section-padding fade-in">
-      <div class="section-label">Ce qu'on fait</div>
-      <h2>Nos Pôles</h2>
-      <div class="grid-3">
-        <div class="card card-ia">
-          <div class="card-icon-wrap">
-            <i class="fa-solid fa-microchip"></i>
-          </div>
-          <h3>Intelligence Artificielle</h3>
-          <p>
-            Découverte du machine learning et de la programmation Python pour
-            anticiper le futur.
+    <section id="activities" class="section reveal-section dark-section">
+      <div class="section-inner">
+        <div class="section-header center">
+          <div class="tag tag-light">Ce qu'on fait</div>
+          <h2 class="light-h2">Nos <em>Pôles</em></h2>
+          <p class="section-sub">
+            Trois axes d'exploration pour bâtir le monde de demain.
           </p>
-          <div class="card-footer-line"></div>
         </div>
-        <div class="card card-science">
-          <div class="card-icon-wrap">
-            <i class="fa-solid fa-flask"></i>
+        <div class="poles-grid">
+          <div class="pole-card" data-index="01">
+            <div class="pole-number">01</div>
+            <div class="pole-icon ia-icon">
+              <i class="fa-solid fa-microchip"></i>
+            </div>
+            <h3>Intelligence Artificielle</h3>
+            <p>
+              Découverte du machine learning et de la programmation Python pour
+              anticiper le futur.
+            </p>
+            <div class="pole-tags">
+              <span>Python</span><span>ML</span><span>Data</span>
+            </div>
+            <div class="pole-hover-line"></div>
           </div>
-          <h3>Sciences Expérimentales</h3>
-          <p>
-            Manipulation et conception de prototypes dans un cadre scientifique
-            rigoureux.
-          </p>
-          <div class="card-footer-line"></div>
-        </div>
-        <div class="card card-env">
-          <div class="card-icon-wrap">
-            <i class="fa-solid fa-leaf"></i>
+          <div class="pole-card featured-card" data-index="02">
+            <div class="pole-number">02</div>
+            <div class="pole-icon sci-icon">
+              <i class="fa-solid fa-flask"></i>
+            </div>
+            <h3>Sciences Expérimentales</h3>
+            <p>
+              Manipulation et conception de prototypes dans un cadre
+              scientifique rigoureux.
+            </p>
+            <div class="pole-tags">
+              <span>Labo</span><span>Proto</span><span>Recherche</span>
+            </div>
+            <div class="pole-hover-line"></div>
           </div>
-          <h3>Environnement</h3>
-          <p>
-            Solutions technologiques pour la transition énergétique et le
-            développement durable.
-          </p>
-          <div class="card-footer-line"></div>
+          <div class="pole-card" data-index="03">
+            <div class="pole-number">03</div>
+            <div class="pole-icon env-icon">
+              <i class="fa-solid fa-leaf"></i>
+            </div>
+            <h3>Environnement</h3>
+            <p>
+              Solutions technologiques pour la transition énergétique et le
+              développement durable.
+            </p>
+            <div class="pole-tags">
+              <span>Énergie</span><span>Durable</span><span>Éco-tech</span>
+            </div>
+            <div class="pole-hover-line"></div>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- TEAM -->
-    <section id="team" class="section-padding fade-in">
-      <div class="section-label">Les personnes</div>
-      <h2>Bureau Exécutif</h2>
-      <div class="team-grid">
-        <div class="team-member">
-          <div class="avatar"><i class="fa-solid fa-user-astronaut"></i></div>
-          <h3>Aymane Berhoua</h3>
-          <p>Président</p>
+    <section id="team" class="section reveal-section">
+      <div class="section-inner">
+        <div class="section-header center">
+          <div class="tag">Les personnes</div>
+          <h2>Bureau <em>Exécutif</em></h2>
         </div>
-        <div class="team-member">
-          <div class="avatar"><i class="fa-solid fa-user-graduate"></i></div>
-          <h3>Hiba Oujabor</h3>
-          <p>Vice-Présidente</p>
-        </div>
-        <div class="team-member">
-          <div class="avatar"><i class="fa-solid fa-pen-nib"></i></div>
-          <h3>Hafsa Ouachi</h3>
-          <p>Secrétaire</p>
-        </div>
-        <div class="team-member">
-          <div class="avatar"><i class="fa-solid fa-chart-pie"></i></div>
-          <h3>Fatiha Al-Mouden</h3>
-          <p>Trésorière</p>
-        </div>
-      </div>
-      <div class="supervisor-block">
-        <div class="supervisor-card">
-          <div class="supervisor-badge">Superviseur</div>
-          <div class="supervisor-avatar">
-            <i class="fa-solid fa-chalkboard-user"></i>
+        <div class="team-grid">
+          <div class="member-card">
+            <div class="member-avatar president">
+              <i class="fa-solid fa-user-astronaut"></i>
+              <div class="avatar-glow"></div>
+            </div>
+            <div class="member-info">
+              <h3>Aymane Berhoua</h3>
+              <span class="member-role">Président</span>
+            </div>
           </div>
-          <h3>Prof. ATTIOUI Mehdi</h3>
-          <p>Enseignant superviseur du club</p>
+          <div class="member-card">
+            <div class="member-avatar vice">
+              <i class="fa-solid fa-user-graduate"></i>
+              <div class="avatar-glow"></div>
+            </div>
+            <div class="member-info">
+              <h3>Hiba Oujabor</h3>
+              <span class="member-role">Vice-Présidente</span>
+            </div>
+          </div>
+          <div class="member-card">
+            <div class="member-avatar sec">
+              <i class="fa-solid fa-pen-nib"></i>
+              <div class="avatar-glow"></div>
+            </div>
+            <div class="member-info">
+              <h3>Hafsa Ouachi</h3>
+              <span class="member-role">Secrétaire</span>
+            </div>
+          </div>
+          <div class="member-card">
+            <div class="member-avatar treso">
+              <i class="fa-solid fa-chart-pie"></i>
+              <div class="avatar-glow"></div>
+            </div>
+            <div class="member-info">
+              <h3>Fatiha Al-Mouden</h3>
+              <span class="member-role">Trésorière</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="supervisor-wrap">
+          <div class="supervisor-card">
+            <div class="sup-badge">Superviseur</div>
+            <div class="sup-avatar">
+              <i class="fa-solid fa-chalkboard-user"></i>
+            </div>
+            <h3>Prof. ATTIOUI Mehdi</h3>
+            <p>Enseignant superviseur du club</p>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- JOIN -->
-    <section id="join" class="section-padding fade-in">
-      <div class="join-inner">
-        <div class="join-text">
-          <div class="section-label light">Nous rejoindre</div>
-          <h2 class="join-title">Prêt(e) à<br />innover&nbsp;?</h2>
-          <p>
-            Le club vient de se lancer ! Inscris-toi via le formulaire, rejoins
-            notre communauté WhatsApp et intègre notre serveur Discord pour
-            échanger, collaborer et ne rien rater.
-          </p>
+    <section id="join" class="section reveal-section join-section">
+      <div class="join-bg-orb"></div>
+      <div class="section-inner">
+        <div class="join-layout">
+          <div class="join-left">
+            <div class="tag tag-light">Nous rejoindre</div>
+            <h2 class="join-h2">Prêt(e) à<br /><em>innover&nbsp;?</em></h2>
+            <p class="join-desc">
+              Le club vient de se lancer ! Inscris-toi, rejoins notre communauté
+              WhatsApp et intègre notre serveur Discord pour échanger,
+              collaborer et ne rien rater.
+            </p>
+            <div class="join-decoration">
+              <div class="deco-line"></div>
+              <span>3 façons de rejoindre</span>
+              <div class="deco-line"></div>
+            </div>
+          </div>
+          <div class="join-right">
+            <a
+              href="https://forms.gle/PpXfu36e1HXPtUQq9"
+              target="_blank"
+              class="join-btn form-btn"
+            >
+              <div class="join-btn-icon">
+                <i class="fa-solid fa-file-pen"></i>
+              </div>
+              <div class="join-btn-text">
+                <span class="jb-label">Formulaire</span>
+                <span class="jb-sub">S'inscrire au club</span>
+              </div>
+              <div class="join-btn-arrow">
+                <i class="fa-solid fa-arrow-right"></i>
+              </div>
+            </a>
+            <a
+              href="https://chat.whatsapp.com/GPHaXRF8ujzDybGBqsgXtB"
+              target="_blank"
+              class="join-btn whatsapp-btn"
+            >
+              <div class="join-btn-icon">
+                <i class="fa-brands fa-whatsapp"></i>
+              </div>
+              <div class="join-btn-text">
+                <span class="jb-label">WhatsApp</span>
+                <span class="jb-sub">Rejoindre la communauté</span>
+              </div>
+              <div class="join-btn-arrow">
+                <i class="fa-solid fa-arrow-right"></i>
+              </div>
+            </a>
+            <a
+              href="https://discord.gg/M7cN2WmqGN"
+              target="_blank"
+              class="join-btn discord-btn"
+            >
+              <div class="join-btn-icon">
+                <i class="fa-brands fa-discord"></i>
+              </div>
+              <div class="join-btn-text">
+                <span class="jb-label">Discord</span>
+                <span class="jb-sub">Rejoindre le serveur</span>
+              </div>
+              <div class="join-btn-arrow">
+                <i class="fa-solid fa-arrow-right"></i>
+              </div>
+            </a>
+          </div>
         </div>
-        <div class="join-actions">
-          <a
-            href="https://forms.gle/PpXfu36e1HXPtUQq9"
-            target="_blank"
-            class="btn btn-primary btn-lg"
-          >
-            <i class="fa-solid fa-file-pen"></i>
-            <span>Formulaire d'inscription</span>
-          </a>
-          <a
-            href="https://chat.whatsapp.com/GPHaXRF8ujzDybGBqsgXtB?mode=gi_t"
-            target="_blank"
-            class="btn btn-whatsapp btn-lg"
-          >
-            <i class="fa-brands fa-whatsapp"></i>
-            <span>Rejoindre WhatsApp</span>
-          </a>
-          <a
-            href="https://discord.gg/M7cN2WmqGN"
-            target="_blank"
-            class="btn btn-discord btn-lg"
-          >
-            <i class="fa-brands fa-discord"></i>
-            <span>Rejoindre Discord</span>
-          </a>
+      </div>
+    </section>
+
+    <!-- LOCATION -->
+    <section id="location" class="section reveal-section location-section">
+      <div class="section-inner">
+        <div class="section-header center">
+          <div class="tag">Où nous trouver</div>
+          <h2>Notre <em>établissement</em></h2>
+        </div>
+        <div class="location-layout">
+          <div class="location-info">
+            <div class="location-card">
+              <div class="loc-icon">
+                <i class="fa-solid fa-location-dot"></i>
+              </div>
+              <div class="loc-details">
+                <h3>Lycée Qualifiant Abou Hayane Tawhidi</h3>
+                <p>F985+552, Bouskoura, Maroc</p>
+                <a
+                  href="https://maps.app.goo.gl/AUn7uFLMV4QE8Jc36"
+                  target="_blank"
+                  class="loc-link"
+                >
+                  Ouvrir dans Google Maps
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+              </div>
+            </div>
+            <div class="location-card">
+              <div class="loc-icon"><i class="fa-solid fa-clock"></i></div>
+              <div class="loc-details">
+                <h3>Horaires du lycée</h3>
+                <p>Lun – Sam : 8h00 – 18h00</p>
+                <p>Dimanche : Fermé</p>
+              </div>
+            </div>
+          </div>
+          <div class="map-embed">
+            <iframe
+              src="https://maps.google.com/maps?q=33.4653928,-7.6420965&z=17&output=embed"
+              width="100%"
+              height="100%"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Lycée Qualifiant Abou Hayane Tawhidi"
+            >
+            </iframe>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- FOOTER -->
     <footer>
-      <div class="footer-socials">
-        <a
-          href="https://chat.whatsapp.com/GPHaXRF8ujzDybGBqsgXtB?mode=gi_t"
-          target="_blank"
-          class="footer-social-link whatsapp"
-          title="WhatsApp"
-        >
-          <i class="fa-brands fa-whatsapp"></i>
-        </a>
-        <a
-          href="https://discord.gg/M7cN2WmqGN"
-          target="_blank"
-          class="footer-social-link discord"
-          title="Discord"
-        >
-          <i class="fa-brands fa-discord"></i>
-        </a>
+      <div class="footer-top">
+        <div class="footer-logo">
+          <span class="logo-bracket">[</span>CDS<span class="logo-bracket"
+            >]</span
+          >
+        </div>
+        <div class="footer-socials">
+          <a
+            href="https://chat.whatsapp.com/GPHaXRF8ujzDybGBqsgXtB"
+            target="_blank"
+            class="fsocial whatsapp"
+            title="WhatsApp"
+          >
+            <i class="fa-brands fa-whatsapp"></i>
+          </a>
+          <a
+            href="https://discord.gg/M7cN2WmqGN"
+            target="_blank"
+            class="fsocial discord"
+            title="Discord"
+          >
+            <i class="fa-brands fa-discord"></i>
+          </a>
+        </div>
       </div>
-      <p>
-        &copy; 2026 Club des Sciences. Design moderne et professionnel. Made by
-        <a href="https://github.com/cottidev" target="_blank"
-          >cottidev (Aymane Berhoua)</a
-        >
-      </p>
+      <div class="footer-bottom">
+        <p>
+          &copy; 2026 Club des Sciences. Made with
+          <span class="heart">♥</span> by
+          <a href="https://github.com/cottidev" target="_blank"
+            >cottidev (Aymane Berhoua)</a
+          >
+        </p>
+      </div>
     </footer>
 
     <script src="script.js"></script>
